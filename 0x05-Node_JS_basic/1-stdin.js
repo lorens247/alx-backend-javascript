@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-/* a simple ad hoc script to practice nodejs */
+/* a simple script to practice nodejs */
 
 const WELCOME_MESSAGE_STUB = 'Welcome to Holberton School, what is your name?\n';
 
-function school(message, callback) {
+function yourName(message, callback) {
   process.stdout.write(message);
   process.stdin.on('data', (data) => {
     callback(data);
@@ -23,7 +23,7 @@ function noClosingCallBack(data) {
 }
 
 if (process.stdin.isTTY) {
-  school(WELCOME_MESSAGE_STUB, noClosingCallBack);
+  yourName(WELCOME_MESSAGE_STUB, noClosingCallBack);
 } else {
-  school(WELCOME_MESSAGE_STUB, closingCallBack);
+  yourName(WELCOME_MESSAGE_STUB, closingCallBack);
 }
